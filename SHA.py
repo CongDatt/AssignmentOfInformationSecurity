@@ -5,8 +5,11 @@ from Crypto import Random
 from Crypto.Random import get_random_bytes
 import time
 
-data = get_random_bytes(32) # 32 ~ 256 bits
-
+data = get_random_bytes(32) # 32 bytes * 8 = 256 bits
+# data = get_random_bytes(64) # 512
+# data = get_random_bytes(128) #1024
+# data = get_random_bytes(256) #2048 
+# data = get_random_bytes(512) # 4096
 def sha1(data):
     c = SHA1.new()
     c.update(data)
@@ -35,7 +38,7 @@ for x in range(1000):
     d=(end_time - start_time) * 1000
     i=i+d
     i=i/1000
-print('Run time avera  = %f ms ' %i)
+print('The average of 1000 running times  = %f ms ' %i)
 
 
 
